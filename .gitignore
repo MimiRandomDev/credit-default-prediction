@@ -1,0 +1,14 @@
+
+# Project additions
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.idea/
+.vscode/
+data/external/UCI_Credit_Card.csv
+data/external/cobranza.db
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
