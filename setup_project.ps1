@@ -1,4 +1,3 @@
-```powershell
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "  Creando estructura del proyecto ML" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
@@ -66,4 +65,3 @@ foreach ($file in $files) {
 Write-Host ""
 Write-Host "Estructura creada correctamente." -ForegroundColor Green
 Write-Host "Los archivos existentes se conservaron." -ForegroundColor Yellow
-```
