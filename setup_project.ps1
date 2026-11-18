@@ -2,7 +2,6 @@ Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "  Creando estructura del proyecto ML" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 
-# 1. Crear carpetas
 $directories = @(
     "data/raw",
     "data/processed",
@@ -18,7 +17,6 @@ foreach ($directory in $directories) {
     New-Item -ItemType Directory -Path $directory -Force | Out-Null
 }
 
-# 2. Crear notebooks
 $notebooks = @(
     "notebooks/01_eda.ipynb",
     "notebooks/02_cleaning.ipynb",
@@ -26,7 +24,6 @@ $notebooks = @(
     "notebooks/04_evaluation.ipynb"
 )
 
-# 3. Crear archivos Python
 $pythonFiles = @(
     "src/__init__.py",
     "src/data_processing.py",
@@ -36,7 +33,6 @@ $pythonFiles = @(
     "src/utils.py"
 )
 
-# 4. Crear consultas SQL
 $sqlFiles = @(
     "queries/query_build_master_dataset.sql",
     "queries/query_exploratory_clientes.sql",
@@ -45,7 +41,6 @@ $sqlFiles = @(
     "queries/query_tables.sql"
 )
 
-# 5. Crear archivos de configuración
 $configFiles = @(
     ".gitignore",
     "README.md",
@@ -53,7 +48,6 @@ $configFiles = @(
     "pyproject.toml"
 )
 
-# 6. Crear archivos sin sobrescribir los existentes
 $files = $notebooks + $pythonFiles + $sqlFiles + $configFiles
 
 foreach ($file in $files) {
