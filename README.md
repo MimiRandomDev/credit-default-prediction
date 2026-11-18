@@ -3,8 +3,8 @@
 <h1 align="center">Credit Default Prediction</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/pandas-2.2+-150458?logo=pandas&logoColor=white" alt="pandas"/>
+  <img src="https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/pandas-3.0+-150458?logo=pandas&logoColor=white" alt="pandas"/>
   <img src="https://img.shields.io/badge/scikit--learn-ML-F7931E?logo=scikitlearn&logoColor=white" alt="scikit-learn"/>
   <img src="https://img.shields.io/badge/SQLite-Database-003B57?logo=sqlite&logoColor=white" alt="SQLite"/>
   <img src="https://img.shields.io/badge/Jupyter-Notebooks-F37626?logo=jupyter&logoColor=white" alt="Jupyter"/>
@@ -67,7 +67,7 @@ cleaning, feature engineering, modeling and evaluation, each in its own notebook
 
 | Layer | Technology |
 |-------|------------|
-| **Language** | ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white) |
+| **Language** | ![Python](https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white) |
 | **Data** | ![pandas](https://img.shields.io/badge/pandas-DataFrames-150458?logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-Arrays-013243?logo=numpy&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-Relational_DB-003B57?logo=sqlite&logoColor=white) |
 | **Visualization** | ![Matplotlib](https://img.shields.io/badge/Matplotlib-Plots-11557C) ![Seaborn](https://img.shields.io/badge/Seaborn-Statistical_Plots-4C72B0) |
 | **Machine Learning** | ![scikit-learn](https://img.shields.io/badge/scikit--learn-Modeling_·_Evaluation-F7931E?logo=scikitlearn&logoColor=white) |
@@ -218,7 +218,7 @@ to avoid data leakage.
 
 ### Prerequisites
 
-![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white)
 ![uv](https://img.shields.io/badge/uv-or_pip-DE5FE9)
 ![Git](https://img.shields.io/badge/Git-Version_Control-F05032?logo=git&logoColor=white)
 
