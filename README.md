@@ -120,8 +120,8 @@ The workflow is split into stages, each with a single responsibility:
 │   ├── features.py          # Feature engineering
 │   ├── train.py             # Model training
 │   └── evaluate.py          # Model evaluation
-├── pyproject.toml
-├── requirements.txt
+├── pyproject.toml           # Single source of dependencies (managed with uv)
+├── uv.lock                  # Locked, reproducible dependency versions
 └── setup_project.ps1
 ```
 
@@ -211,6 +211,7 @@ to avoid data leakage.
 - Functions use **type hints** and **NumPy-style docstrings** with examples
 - SQL is kept in separate `.sql` files instead of strings inside the code
 - Every analytical decision is written in the notebook next to the code that supports it
+- Dependencies are declared in a single place (`pyproject.toml`) and pinned in `uv.lock`
 
 ---
 
@@ -219,8 +220,11 @@ to avoid data leakage.
 ### Prerequisites
 
 ![Python](https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white)
-![uv](https://img.shields.io/badge/uv-or_pip-DE5FE9)
+![uv](https://img.shields.io/badge/uv-Required-DE5FE9)
 ![Git](https://img.shields.io/badge/Git-Version_Control-F05032?logo=git&logoColor=white)
+
+This project uses [uv](https://docs.astral.sh/uv/) to manage the Python environment and
+dependencies. `pyproject.toml` is the single source of truth and `uv.lock` pins exact versions.
 
 ### 1. Clone the repo
 
@@ -231,23 +235,13 @@ cd credit-default-prediction
 
 ### 2. Create the environment and install dependencies
 
-With **uv**:
-
 ```bash
 uv sync
 ```
 
-Or with **pip**:
-
-```bash
-python -m venv .venv
-# Windows (PowerShell)
-.venv\Scripts\Activate.ps1
-# Linux / macOS
-source .venv/bin/activate
-
-pip install -r requirements.txt
-```
+This creates `.venv/` and installs every dependency declared in `pyproject.toml`. To add a new
+dependency later, use `uv add <package>` (or `uv add --dev <package>` for development tools)
+instead of editing files by hand.
 
 ### 3. Download the dataset
 
@@ -263,7 +257,7 @@ The script reads the CSV from the current directory, so run it from `data/extern
 
 ```bash
 cd data/external
-python generate_collection_db.py
+uv run python generate_collection_db.py
 cd ../..
 ```
 
@@ -271,9 +265,9 @@ This creates `data/external/cobranza.db` with the `clientes` and `historial_mens
 
 ### 5. Run the notebooks
 
-Open the notebooks in your preferred environment and run them in order, from `01_eda.ipynb`
-to `04_evaluation.ipynb`. Notebooks use relative paths (`../queries`, `../data/external`),
-so the working directory must be `notebooks/`.
+Open the notebooks in your preferred environment, select the project's `.venv` as the kernel, and
+run them in order, from `01_eda.ipynb` to `04_evaluation.ipynb`. Notebooks use relative paths
+(`../queries`, `../data/external`), so the working directory must be `notebooks/`.
 
 ---
 
